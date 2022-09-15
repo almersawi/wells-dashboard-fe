@@ -1,0 +1,22 @@
+@import "./antd/antd.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container a.leaflet-popup-close-button,
+.leaflet-control-attribution,
+.leaflet-control-container {
+  display: none;
+}
+
+.ant-table-expanded-row > td {
+  padding: 0 !important;
+}
+
+.ant-menu-submenu-selected {
+  font-weight: 500;
+}
+
+.rc-virtual-list .anticon {
+  display: none;
+}

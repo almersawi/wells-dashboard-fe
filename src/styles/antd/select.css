@@ -1,0 +1,4 @@
+.ant-select-selector {
+  border-color: theme("colors.gray.50") !important;
+  box-shadow: theme("boxShadow.sm");
+}
