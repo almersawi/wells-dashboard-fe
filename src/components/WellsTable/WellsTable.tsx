@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-location";
+import { FIELD_DETAIL_TYPE } from "@verg/api-service";
 import { Card, Table } from "antd";
 import {
   useDeleteWell,
@@ -55,7 +57,19 @@ export default function WellsTable() {
           onChange: setSelectedRowKeys,
         }}
         scroll={{ x: "max-content" }}
-        columns={TableUtil.columnsFromFieldsDetail(fieldsDetail)}
+        columns={[
+          TableUtil.getColumn({
+            id: "name",
+            title: "Name",
+            type: FIELD_DETAIL_TYPE.STRING,
+            render: (name, row) => (
+              <Link className="font-medium" to={row?.id}>
+                {name}
+              </Link>
+            ),
+          }),
+          ...TableUtil.columnsFromFieldsDetail(fieldsDetail, ["name"]),
+        ]}
         {...TABLE_CONFIG}
       />
     </Card>
