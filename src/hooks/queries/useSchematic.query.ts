@@ -8,7 +8,7 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 import Api from "services/api/api.service";
 import ReactQueryUtil from "utils/reactQuery.util";
 
-export const useQueryKeyWell = () => {
+export const useQueryKey = () => {
   const wellId = useWellId();
   return [ENTITIES.SCHEMATIC, ENTITIES.WELL, wellId];
 };
@@ -63,13 +63,13 @@ export const useSchematicFieldsDetail = () => {
 
 export const useInvalidateQuery = () => {
   const queryClient = useQueryClient();
-  const queryKey = useQueryKeyWell();
+  const queryKey = useQueryKey();
   const invalidateQuery = () => queryClient.invalidateQueries(queryKey);
   return invalidateQuery;
 };
 
 export function useSchematicData() {
-  const queryKey = useQueryKeyWell();
+  const queryKey = useQueryKey();
   const wellId = useWellId();
   const query = useQuery(queryKey, () =>
     Api.entities.schematic.get({

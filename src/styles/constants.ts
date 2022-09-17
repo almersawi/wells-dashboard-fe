@@ -2,6 +2,7 @@ import { SizeType } from "antd/lib/config-provider/SizeContext";
 import { FormLayout } from "antd/lib/form/Form";
 
 export const MODAL_BODY_STYLE = {
+  minHeight: "50vh",
   maxHeight: "70vh",
   overflow: "auto",
 };

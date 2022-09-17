@@ -1,4 +1,5 @@
 import { Card, Col, Row } from "antd";
+import TrajectoryChart from "components/TrajectoryChart";
 import WellSchematicThreeD from "components/WellSchematicThreeD";
 import WellSchematicTwoD from "components/WellSchematicTwoD";
 import WellsMap from "components/WellsMap";
@@ -30,7 +31,7 @@ export default function WellSummary() {
                 />
               </Col>
               <Col span={7}>
-                <Card title="Trajectory" />
+                <TrajectoryChart />
               </Col>
               <Col span={5}>
                 <WellSchematicThreeD />

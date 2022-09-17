@@ -1,9 +1,10 @@
+import TrajectoryTable from "components/TrajectoryTable";
 import Wrapper from "components/Wrapper";
 
 export default function WellTrajectoryData() {
   return (
     <Wrapper>
-      <h3>Well Trajectory Data</h3>
+      <TrajectoryTable />
     </Wrapper>
   );
 }
