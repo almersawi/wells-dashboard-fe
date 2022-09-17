@@ -14,6 +14,7 @@ module.exports = {
         background: "#f7f9fc",
         sideNav: "#fff",
         primary: "#003366",
+        secondary: "#e5e5e5",
       },
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],

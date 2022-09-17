@@ -1,5 +1,6 @@
 import { VertApiEntity, VertApiService } from "@verg/api-service";
 import { ENTITIES } from "models/entities";
+import { Schematic } from "models/schematic";
 import { Well } from "models/well";
 
 export type Params = {
@@ -9,6 +10,7 @@ export type VertApiEntityModel<TEntity> = VertApiEntity<ENTITIES, TEntity>;
 
 export default class Entities {
   [ENTITIES.WELL]: VertApiEntityModel<Well>;
+  [ENTITIES.SCHEMATIC]: VertApiEntityModel<Schematic>;
 
   constructor({ vertApiInstance }: Params) {
     // Add to this array the entities that have non VertApiEntity class
@@ -17,6 +19,7 @@ export default class Entities {
       (value) => !entitiesToOmit.includes(value)
     );
     entitiesToCreate.forEach((entity) => {
+      // @ts-ignore
       this[entity] = new VertApiEntity({
         vertApiInstance,
         entity,

@@ -14,10 +14,7 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     checker({
-      eslint: {
-        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-      },
-      typescript: true,
+      // typescript: true,
     }),
     visualizer({
       gzipSize: true,

@@ -20,9 +20,14 @@ export const SELECT_STYLE = {
 
 export const PAGINATION_CONFIG = {
   hideOnSinglePage: true,
+  defaultPageSize: 8
 };
 
 export const TABLE_CONFIG = {
   size: "small" as SizeType,
   bordered: true,
+};
+
+export const MODAL_CONFIG = {
+  maskClosable: false,
 };

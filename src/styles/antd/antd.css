@@ -4,3 +4,11 @@
 @import "./radio.css";
 @import "./table.css";
 @import "./select.css";
+
+.ant-menu-light .ant-menu-item-selected {
+  background-color: #e5e5e5 !important;
+}
+
+.ant-menu-light .ant-menu-item {
+    font-weight: 500 !important;
+}

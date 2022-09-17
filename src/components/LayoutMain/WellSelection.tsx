@@ -1,5 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
-import Select, { RefSelectProps } from "antd/lib/select";
+import { RefSelectProps } from "antd/lib/select";
+import { Select } from "antd";
 import { useWells } from "hooks/queries/useWells.query";
 import { useAppRouter } from "hooks/useAppRouter";
 import { ROUTE_PATH } from "models/routes";
@@ -28,7 +29,7 @@ export default function WellSelection() {
     <div>
       <Select
         size="middle"
-        className="!w-[300px] !text-sm "
+        className="!w-[300px] !text-sm"
         ref={selectRef}
         suffixIcon={<SearchOutlined />}
         value={isLoading ? undefined : locationSplit?.[2]}

@@ -1,7 +1,15 @@
-import { useWellId } from "hooks/useWellId";
+import { Outlet } from "@tanstack/react-location";
+import { Layout } from "antd";
+import { Content } from "antd/lib/layout/layout";
+import WellMenu from "components/WellMenu";
 
 export default function WellLayout() {
-  const wellId = useWellId();
-
-  return <h1>Well page for well with id: {wellId}</h1>;
+  return (
+    <Layout>
+      <WellMenu />
+      <Content>
+        <Outlet />
+      </Content>
+    </Layout>
+  );
 }

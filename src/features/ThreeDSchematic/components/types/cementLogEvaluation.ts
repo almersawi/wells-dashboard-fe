@@ -1,0 +1,1 @@
+export type CementingLogEvaluation = "Possible Communication" | "Possible Isolation" | "Not Logged"

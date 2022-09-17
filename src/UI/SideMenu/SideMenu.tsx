@@ -23,6 +23,7 @@ function SideMenu({
       collapsible
       collapsed={isSliderCollapsed}
       onCollapse={() => setIsSiderCollapsed(!isSliderCollapsed)}
+      style={{height: "calc(100vh - 50px)"}}
     >
       <Menu
         mode="inline"

@@ -11,6 +11,8 @@ export function useModalForm<T>() {
     selected: undefined,
   });
 
+  const [isCsvFormVisible, setIsCsvFormVisible] = useState<boolean>(false);
+
   function add() {
     set({ visible: true, selected: undefined });
   }
@@ -21,7 +23,12 @@ export function useModalForm<T>() {
 
   function reset() {
     set({ visible: false, selected: undefined });
+    setIsCsvFormVisible(false);
   }
 
-  return { modalForm, add, edit, reset };
+  function readCsv() {
+    setIsCsvFormVisible(true);
+  }
+
+  return { modalForm, add, edit, reset, isCsvFormVisible, readCsv };
 }
