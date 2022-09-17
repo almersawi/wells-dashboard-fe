@@ -15,8 +15,8 @@ export default function Dashboard() {
       <IF
         condition={!isLoading}
         trueComponent={
-          <Row className="h-[600px]">
-            <Col span="24">
+          <Row className="h-[600px] mt-[50px]">
+            <Col span="12">
               <WellsMap wells={wells} />
             </Col>
           </Row>

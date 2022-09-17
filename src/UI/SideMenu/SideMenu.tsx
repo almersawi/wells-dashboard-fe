@@ -23,15 +23,17 @@ function SideMenu({
       collapsible
       collapsed={isSliderCollapsed}
       onCollapse={() => setIsSiderCollapsed(!isSliderCollapsed)}
-      style={{height: "calc(100vh - 50px)"}}
+      className="mt-[50px] !w-full"
+      style={{height: "calc(100vh - 40px)"}}
     >
       <Menu
         mode="inline"
         defaultSelectedKeys={[defaultSelectedKey]}
-        className="!border-r-0"
+        className="!border-r-0 fixed !w-[210px]"
         items={items}
         onClick={onClick}
         defaultOpenKeys={defaultOpenKeys}
+        style={{height: "calc(100vh - 40px)"}}
       />
     </Sider>
   );

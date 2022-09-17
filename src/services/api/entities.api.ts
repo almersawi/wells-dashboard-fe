@@ -3,6 +3,7 @@ import { ENTITIES } from "models/entities";
 import { ProductionData } from "models/production-data";
 import { Schematic } from "models/schematic";
 import { Well } from "models/well";
+import { WellSummary } from "models/well-summary";
 import { TrajectoryEntityModel } from "./models/trajectoryEntityModel";
 
 export type Params = {
@@ -14,6 +15,7 @@ export default class Entities {
   [ENTITIES.WELL]: VertApiEntityModel<Well>;
   [ENTITIES.SCHEMATIC]: VertApiEntityModel<Schematic>;
   [ENTITIES.PRODUCTION_DATA]: VertApiEntityModel<ProductionData>;
+  [ENTITIES.WELL_SUMMARY]: VertApiEntityModel<WellSummary>;
   [ENTITIES.TRAJECTORY]: TrajectoryEntityModel;
 
   constructor({ vertApiInstance }: Params) {

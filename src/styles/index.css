@@ -24,3 +24,7 @@
 body {
   background-color: #f7f9fc !important;
 }
+
+.ant-layout-sider-trigger {
+  display: none;
+}

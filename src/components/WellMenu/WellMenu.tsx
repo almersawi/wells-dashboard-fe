@@ -39,7 +39,7 @@ const items: MenuItem[] = [
         route: ROUTE_PATH.PRODUCTION_DATA,
         key: ROUTE_PATH.PRODUCTION_DATA,
         icon: <GiOilPump />,
-      })
+      }),
     ],
   }),
 ];
@@ -60,11 +60,13 @@ export default function WellMenu() {
     : ROUTE_PATH.SUMMARY;
 
   return (
-    <SideMenu
-      items={items}
-      defaultSelectedKey={activeRoute}
-      onClick={onClick}
-      defaultOpenKeys={[ROUTE_PATH.DATA_MANAGMENT]}
-    />
+    <div className="">
+      <SideMenu
+        items={items}
+        defaultSelectedKey={activeRoute}
+        onClick={onClick}
+        defaultOpenKeys={[ROUTE_PATH.DATA_MANAGMENT]}
+      />
+    </div>
   );
 }

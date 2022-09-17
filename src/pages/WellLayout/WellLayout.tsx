@@ -7,7 +7,7 @@ export default function WellLayout() {
   return (
     <Layout>
       <WellMenu />
-      <Content>
+      <Content className="pt-[40px]">
         <Outlet />
       </Content>
     </Layout>
