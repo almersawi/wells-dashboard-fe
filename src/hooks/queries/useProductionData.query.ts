@@ -1,60 +1,42 @@
 import { FIELD_DETAIL_TYPE } from "@verg/api-service";
-import { WELL_SCHEMATIC_ITEM_TYPES } from "features/WellSchematic/models/well-schematic-config";
 import { useWellId } from "hooks/useWellId";
 import { ENTITIES } from "models/entities";
 import { FieldsDetailType } from "models/fieldsDetail";
-import { Schematic } from "models/schematic";
+import { ProductionData } from "models/production-data";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import Api from "services/api/api.service";
 import ReactQueryUtil from "utils/reactQuery.util";
 
 export const useQueryKey = () => {
   const wellId = useWellId();
-  return [ENTITIES.SCHEMATIC, ENTITIES.WELL, wellId];
+  return [ENTITIES.PRODUCTION_DATA, ENTITIES.WELL, wellId];
 };
 
-export const useSchematicFieldsDetail = () => {
-  const fields: FieldsDetailType<Schematic> = [
+export const useProductionFieldsDetail = () => {
+  const fields: FieldsDetailType<ProductionData> = [
     {
-      id: "type",
-      name: "Type",
-      type: FIELD_DETAIL_TYPE.ENUM_STRING,
+      id: "date",
+      name: "Date",
+      type: FIELD_DETAIL_TYPE.DATE,
       desc: "",
       unit: "",
-      values: Object.values(WELL_SCHEMATIC_ITEM_TYPES),
       required: true,
     },
     {
-      id: "top",
-      name: "Top",
+      id: "rate",
+      name: "Rate",
       type: FIELD_DETAIL_TYPE.NUMBER,
       desc: "",
-      unit: "ft",
+      unit: "bbl/day",
       required: true,
     },
     {
-      id: "bottom",
-      name: "Bottom",
+      id: "wellheadPressure",
+      name: "Wellhead Pressure",
       type: FIELD_DETAIL_TYPE.NUMBER,
       desc: "",
-      unit: "ft",
+      unit: "psi",
       required: true,
-    },
-    {
-      id: "od",
-      name: "OD",
-      type: FIELD_DETAIL_TYPE.NUMBER,
-      desc: "",
-      unit: "in",
-      required: true,
-    },
-    {
-      id: "toc",
-      name: "Top of cement",
-      type: FIELD_DETAIL_TYPE.NUMBER,
-      desc: "",
-      unit: "ft",
-      required: false,
     },
   ];
 
@@ -68,21 +50,21 @@ export const useInvalidateQuery = () => {
   return invalidateQuery;
 };
 
-export function useSchematicData() {
+export function useProductionData() {
   const queryKey = useQueryKey();
   const wellId = useWellId();
   const query = useQuery(queryKey, () =>
-    Api.entities.schematic.get({
+    Api.entities.productionData.get({
       extraPath: `/wellId/${wellId}`,
     })
   );
   return ReactQueryUtil.processGetQuery(query);
 }
 
-export function useDeleteWellSchematic() {
+export function useDeleteProductionData() {
   const invalidateQuery = useInvalidateQuery();
   const query = useMutation(
-    (entityId: string) => Api.entities.schematic.delete({ entityId }),
+    (entityId: string) => Api.entities.productionData.delete({ entityId }),
     {
       onSuccess: () => {
         invalidateQuery();
@@ -92,12 +74,12 @@ export function useDeleteWellSchematic() {
   return query;
 }
 
-export function useAddWellSchematic() {
+export function useAddProductionData() {
   const invalidateQuery = useInvalidateQuery();
   const wellId = useWellId();
   const query = useMutation(
-    (payload: Schematic) =>
-      Api.entities.schematic.create({ body: { ...payload, wellId } }),
+    (payload: ProductionData) =>
+      Api.entities.productionData.create({ body: { ...payload, wellId } }),
     {
       onSuccess: () => {
         invalidateQuery();
@@ -107,11 +89,11 @@ export function useAddWellSchematic() {
   return query;
 }
 
-export function useUpdateWellSchematic() {
+export function useUpdateProductionData() {
   const invalidateQuery = useInvalidateQuery();
   const query = useMutation(
-    (payload: Schematic) =>
-      Api.entities.schematic.update({ body: { ...payload } }),
+    (payload: ProductionData) =>
+      Api.entities.productionData.update({ body: { ...payload } }),
     {
       onSuccess: () => {
         invalidateQuery();

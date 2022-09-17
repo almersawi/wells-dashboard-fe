@@ -149,11 +149,11 @@ export default class TableUtil {
   }
 
   public static dateColumnRender(date: string) {
-    return date && ValueUtil.getValue(dateService.instance.getDate(date));
+    return date && ValueUtil.getValue(dateService.getDate(date));
   }
 
   public static timeColumnRender(date: Date) {
-    return date && ValueUtil.getValue(dateService.instance.getDateTime(date));
+    return date && ValueUtil.getValue(dateService.getDateTime(date));
   }
 
   public static mainColumnRender(value: any) {

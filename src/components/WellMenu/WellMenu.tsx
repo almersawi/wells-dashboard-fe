@@ -7,7 +7,7 @@ import {
   AiOutlineDatabase,
   AiOutlineLineChart,
 } from "react-icons/ai";
-import { GiOilPump, GiOilRig, GiGasPump } from "react-icons/gi";
+import { GiOilPump, GiOilRig } from "react-icons/gi";
 
 const items: MenuItem[] = [
   getItem({
@@ -26,7 +26,7 @@ const items: MenuItem[] = [
         label: "Schematic",
         route: ROUTE_PATH.WELL_SCHEMATIC,
         key: ROUTE_PATH.WELL_SCHEMATIC,
-        icon: <GiOilPump />,
+        icon: <GiOilRig />,
       }),
       getItem({
         label: "Trajectory",
@@ -38,14 +38,8 @@ const items: MenuItem[] = [
         label: "Production Data",
         route: ROUTE_PATH.PRODUCTION_DATA,
         key: ROUTE_PATH.PRODUCTION_DATA,
-        icon: <GiGasPump />,
-      }),
-      getItem({
-        label: "Wellhead Data",
-        route: ROUTE_PATH.WELLHEAD_DATA,
-        key: ROUTE_PATH.WELLHEAD_DATA,
-        icon: <GiOilRig />,
-      }),
+        icon: <GiOilPump />,
+      })
     ],
   }),
 ];

@@ -9,13 +9,9 @@ dayjs.extend(utcPlugin);
 dayjs.extend(timeZonePlugin);
 dayjs.extend(relativeTime);
 // TODO: Timezone
-export default class DateService {
+class DateService {
   private timeZone = TIME_ZONE;
   static instance: DateService;
-
-  static init({ timeZone }: { timeZone: TIME_ZONE }) {
-    DateService.instance = new DateService({ timeZone });
-  }
 
   constructor({ timeZone }: { timeZone: TIME_ZONE }) {
     // @ts-ignore
@@ -90,3 +86,7 @@ export default class DateService {
     return dayjs().to(dayjs(time));
   };
 }
+
+const dateService = new DateService({timeZone: TIME_ZONE.EGYPT})
+
+export default dateService;

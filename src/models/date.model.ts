@@ -1,5 +1,5 @@
 export enum TIME_ZONE {
-  EGPTY = "Africa/Cairo",
+  EGYPT = "Africa/Cairo",
   LIBYA = "Africa/Tripoli",
   IRAQ = "Asia/Baghdad",
   TURKMENISTAN = "Asia/Ashgabat",

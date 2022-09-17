@@ -1,4 +1,4 @@
-import { FieldsDetails, FieldsDetailUtil, FIELD_DETAIL_TYPE } from "@verg/api-service";
+import { FieldsDetails, FIELD_DETAIL_TYPE } from "@verg/api-service";
 import { isEmpty } from "lodash";
 import DateService from "services/date.service";
 
@@ -7,7 +7,7 @@ export default class FormUtil {
     isExisting ? "Edit" : "Add";
 
     public static getFieldDate(value: string | undefined) {
-      return DateService.instance.getFormDateValue(value);
+      return DateService.getFormDateValue(value);
     }
 
 
@@ -40,7 +40,7 @@ export default class FormUtil {
   
       return Object.entries(fields).reduce((acc, [k, v]) => {
         const isDateField = dateFields.includes(k);
-        const value = isDateField ? DateService.instance.getDateToStore(v) : v;
+        const value = isDateField ? DateService.getDateToStore(v) : v;
         return {
           ...acc,
           [k]: value,

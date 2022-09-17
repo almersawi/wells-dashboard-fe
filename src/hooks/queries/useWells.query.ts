@@ -61,7 +61,7 @@ export const useWellFieldsDetail = () => {
       name: "Choke Size",
       type: FIELD_DETAIL_TYPE.NUMBER,
       desc: "",
-      unit: "(1/64) in",
+      unit: "(in/64)",
       required: true,
     },
   ];
