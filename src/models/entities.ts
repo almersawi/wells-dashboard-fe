@@ -4,4 +4,5 @@ export enum ENTITIES {
   TRAJECTORY = "trajectory",
   PRODUCTION_DATA = "productionData",
   WELL_SUMMARY = "wellSummary",
+  DASHBOARD = "dashboard"
 }

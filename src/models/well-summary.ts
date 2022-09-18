@@ -3,6 +3,7 @@ export interface WellSummary {
   name: string;
   status: string;
   type: string;
+  stringType: string;
   lat?: number;
   lon?: number;
   minProdRate?: number;

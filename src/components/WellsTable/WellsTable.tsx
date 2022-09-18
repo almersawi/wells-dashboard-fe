@@ -37,7 +37,7 @@ export default function WellsTable() {
     <>
       <Card
         loading={isLoading}
-        className="min-h-[600px]"
+        className="h-full"
         title={
           <CardHeader title="Wells">
             <div>

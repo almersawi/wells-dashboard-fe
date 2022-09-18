@@ -32,6 +32,12 @@ export default function WellInfoCard({ wellSummary }: Props) {
       </div>
       <div>
         <div className="text-lg font-bold" style={{ color }}>
+          String Type
+        </div>
+        <div className="text-base">{wellSummary?.stringType}</div>
+      </div>
+      <div>
+        <div className="text-lg font-bold" style={{ color }}>
           Location
         </div>
         <div className="text-base">

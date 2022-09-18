@@ -1,4 +1,5 @@
 import { VertApiEntity, VertApiService } from "@verg/api-service";
+import { DashboardSummary } from "models/dashboard-summary";
 import { ENTITIES } from "models/entities";
 import { ProductionData } from "models/production-data";
 import { Schematic } from "models/schematic";
@@ -16,6 +17,7 @@ export default class Entities {
   [ENTITIES.SCHEMATIC]: VertApiEntityModel<Schematic>;
   [ENTITIES.PRODUCTION_DATA]: VertApiEntityModel<ProductionData>;
   [ENTITIES.WELL_SUMMARY]: VertApiEntityModel<WellSummary>;
+  [ENTITIES.DASHBOARD]: VertApiEntityModel<DashboardSummary>;
   [ENTITIES.TRAJECTORY]: TrajectoryEntityModel;
 
   constructor({ vertApiInstance }: Params) {

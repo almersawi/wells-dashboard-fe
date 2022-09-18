@@ -2,7 +2,7 @@ import { FIELD_DETAIL_TYPE } from "@verg/api-service";
 import { useWellId } from "hooks/useWellId";
 import { ENTITIES } from "models/entities";
 import { FieldsDetailType } from "models/fieldsDetail";
-import { Well, WELL_STATUS, WELL_TYPE } from "models/well";
+import { Well, WELL_STATUS, WELL_STRING_TYPE, WELL_TYPE } from "models/well";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import Api from "services/api/api.service";
 import ReactQueryUtil from "utils/reactQuery.util";
@@ -57,11 +57,12 @@ export const useWellFieldsDetail = () => {
       required: true,
     },
     {
-      id: "chokeSize",
-      name: "Choke Size",
-      type: FIELD_DETAIL_TYPE.NUMBER,
+      id: "stringType",
+      name: "String Type",
+      type: FIELD_DETAIL_TYPE.ENUM_STRING,
       desc: "",
-      unit: "(in/64)",
+      unit: "",
+      values: Object.values(WELL_STRING_TYPE),
       required: true,
     },
   ];

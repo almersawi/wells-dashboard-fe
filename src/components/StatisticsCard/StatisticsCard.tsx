@@ -3,7 +3,7 @@ import IF from "UI/IF";
 
 type Props = {
   title: string;
-  value?: number;
+  value?: number | string;
   color: string;
   unit?: string;
   additionalText?: string;
@@ -18,7 +18,7 @@ export default function StatisticsCard({
 }: Props) {
   return (
     <div
-      className="flex flex-col w-full shadow-sm rounded-md p-4 gap-4 border-4 border-solid border-y-0 border-r-0 bg-white h-full"
+      className="flex flex-col w-full shadow-sm rounded-md p-4 gap-1 border-4 border-solid border-y-0 border-r-0 bg-white h-full"
       style={{ borderColor: color }}
     >
       <div className="text-lg font-bold" style={{ color }}>
@@ -26,7 +26,7 @@ export default function StatisticsCard({
       </div>
       <div className="text-base">
         <strong>
-          {value != null && value != undefined ? round(value, 2) : "No Data"}
+          {value != null && value != undefined ? (typeof(value) == "number" ? round(value, 2) : value) : "No Data"}
         </strong>{" "}
         <span className="text-sm">
           {unit && value !== null && value !== undefined ? `(${unit})` : ""}

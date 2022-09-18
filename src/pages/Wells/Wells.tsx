@@ -4,7 +4,9 @@ import Wrapper from "components/Wrapper";
 export default function Wells() {
   return (
     <Wrapper>
-      <WellsTable />;
+      <div className="mt-[50px]" style={{ height: "calc(100vh - 150px)" }}>
+        <WellsTable />;
+      </div>
     </Wrapper>
   );
 }

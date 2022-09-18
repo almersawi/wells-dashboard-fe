@@ -9,6 +9,11 @@ export enum WELL_TYPE {
   INJECTOR = "Injector",
 }
 
+export enum WELL_STRING_TYPE {
+  SINGLE = "Single",
+  DUAL = "Dual",
+}
+
 export interface Well {
   id: string;
   name: string;
@@ -17,4 +22,5 @@ export interface Well {
   status: WELL_STATUS;
   chokeSize: number;
   type: WELL_TYPE;
+  stringType: WELL_STRING_TYPE;
 }
